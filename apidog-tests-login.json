@@ -1,0 +1,77 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Default module",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/login": {
+      "post": {
+        "summary": "Log in",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "email": "antonio@example.com",
+                "password": "securePassword123"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbnRvbmlvQGV4YW1wbGUuY29tIiwibmFtZSI6IkFudG9uaW8iLCJleHAiOjE3ODY2NTU4NDksImlhdCI6MTc4NjY1MjI0OX0.gXHhUZ7uA6ThX-o4Shz-PvTUuwRRWE9cq2yxHXKBc-0",
+                  "tokenType": "Bearer",
+                  "expiresIn": 3600,
+                  "user": {
+                    "id": "88ec3d73-32b4-4cd3-8fb6-2208722b800c",
+                    "email": "antonio@example.com",
+                    "name": "Antonio"
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-x-api-key": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "responses": {},
+    "securitySchemes": {
+      "apikey-header-x-api-key": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-key"
+      }
+    }
+  },
+  "servers": [],
+  "security": []
+}
